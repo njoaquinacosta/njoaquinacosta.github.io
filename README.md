@@ -1,2 +1,2 @@
 # njoaquinacosta.github.io
-Hallo, Welt!
+ Space being used as a personal website and blog. 
