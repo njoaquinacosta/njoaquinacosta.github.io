@@ -32,6 +32,14 @@
     padding: 10px;
 }
 
+.tcenter {
+    margin: auto;
+    width: 60%;
+    padding: 10px 70px;
+    position: relative;
+    text-align: center;
+}
+
 #rcorners { border-radius: 25px; }
   </style>
   </head>
@@ -96,11 +104,11 @@
       <td bgcolor="#d9ffb3"><xsl:value-of select="descript/supplinf"/></td>
     </tr>
      <tr>
-      <th rowspan="2" width="15%" bgcolor="#daa520"><strong>Time Period</strong></th>
-      <td bgcolor="#d9ffb3"><b>Begin date: </b><xsl:value-of select="timeperd/timeinfo/rngdates/begdate"/></td>
+      <th rowspan="2" width="15%" bgcolor="#daa520"><strong>Timeperd</strong></th>
+      <td bgcolor="#d9ffb3"><b>Begdate: </b><xsl:value-of select="timeperd/timeinfo/rngdates/begdate"/></td>
     </tr>
     <tr>
-      <td bgcolor="#d9ffb3"><b>End date: </b><xsl:value-of select="timeperd/timeinfo/rngdates/enddate"/></td>
+      <td bgcolor="#d9ffb3"><b>Enddate: </b><xsl:value-of select="timeperd/timeinfo/rngdates/enddate"/></td>
     </tr>
      <tr>
       <th width="15%" bgcolor="#daa520"><strong>Current</strong></th>
@@ -114,66 +122,171 @@
      <td bgcolor="#d9ffb3"><b>Update: </b><xsl:value-of select="status/update"/></td>
     </tr>
      <tr>
-      <th width="15%" bgcolor="#daa520"><strong>Spdom</strong></th>
+      <th width="15%" bgcolor="#daa520"><strong>Descgeog</strong></th>
       <td bgcolor="#d9ffb3"><xsl:value-of select="spdom/descgeog"/></td>
     </tr>
      <tr>
       <th rowspan="4" width="15%" bgcolor="#daa520"><strong>Bounding</strong></th>
-      <td bgcolor="#d9ffb3"><b>West: </b><xsl:value-of select="spdom/bounding/westbc"/></td>
+      <td bgcolor="#d9ffb3"><b>Westbc: </b><xsl:value-of select="spdom/bounding/westbc"/></td>
     </tr>
      <tr>
-      <td bgcolor="#d9ffb3"><b>East:</b> <xsl:value-of select="spdom/bounding/eastbc"/></td>
+      <td bgcolor="#d9ffb3"><b>Eastbc:</b> <xsl:value-of select="spdom/bounding/eastbc"/></td>
     </tr>
      <tr>
-      <td bgcolor="#d9ffb3"><b>North:</b> <xsl:value-of select="spdom/bounding/northbc"/></td>
+      <td bgcolor="#d9ffb3"><b>Northbc:</b> <xsl:value-of select="spdom/bounding/northbc"/></td>
     </tr>
      <tr>
-      <td bgcolor="#d9ffb3"><b>South: </b><xsl:value-of select="spdom/bounding/southbc"/></td>
+      <td bgcolor="#d9ffb3"><b>Southbc: </b><xsl:value-of select="spdom/bounding/southbc"/></td>
     </tr>
+    <!--Theme-->
+    <tr>
+    <th width="15%" bgcolor="#daa520"><strong>Theme</strong></th>
+     <td class="tcenter">
+      <table>
+      <tr>
+      <th width="15%" bgcolor="#daa520"><strong>Themekt</strong></th>
+      <th width="15%" bgcolor="#daa520"><strong>Themekey</strong></th>
+      </tr>
      <tr>
-      <th width="15%" bgcolor="#daa520"><strong>Keywords</strong></th>
       <td bgcolor="#d9ffb3"><xsl:value-of select="keywords/theme/themekt"/></td>
+      <td bgcolor="#d9ffb3"></td>
     </tr>
      <tr>
-      <th  width="15%" bgcolor="#daa520"><strong>Keywords</strong></th>
+      <td bgcolor="#d9ffb3"></td>
       <td bgcolor="#d9ffb3"><xsl:value-of select="keywords/theme/themekey"/></td>
     </tr>
      <tr>
-      <th  width="15%" bgcolor="#daa520"><strong>Keywords</strong></th>
-      <td bgcolor="#d9ffb3"><xsl:value-of select="keywords/theme/themekey[theme='themekey']"/></td>
+      <td bgcolor="#d9ffb3"></td>
+      <td bgcolor="#d9ffb3"><xsl:text>coast</xsl:text></td>
     </tr>
      <tr>
-      <th width="15%" bgcolor="#daa520"><strong>Keywords</strong></th>
-      <td bgcolor="#d9ffb3"><xsl:value-of select="keywords/theme/themekt"/></td>
+      <td bgcolor="#d9ffb3"></td>
+      <td bgcolor="#d9ffb3"><xsl:text>Arctic</xsl:text></td>
+    </tr>
+    <tr>
+      <td bgcolor="#d9ffb3"></td>
+      <td bgcolor="#d9ffb3"><xsl:text>Marine</xsl:text></td>
     </tr>
      <tr>
-      <th  width="15%" bgcolor="#daa520"><strong>Keywords</strong></th>
-      <td bgcolor="#d9ffb3"><xsl:value-of select="keywords/theme/themekey"/></td>
+      <th bgcolor="#d9ffb3"></th>
+      <td bgcolor="#d9ffb3"><xsl:text>Marine Mammals</xsl:text></td>
     </tr>
      <tr>
-      <th width="15%" bgcolor="#daa520"><strong>Keywords</strong></th>
-      <td bgcolor="#d9ffb3"><xsl:value-of select="keywords/place/placekt"/></td>
+      <td bgcolor="#d9ffb3"><xsl:text>ISO</xsl:text></td>
+      <td bgcolor="#d9ffb3"></td>
     </tr>
      <tr>
-      <th width="15%" bgcolor="#daa520"><strong>Keywords</strong></th>
-      <td bgcolor="#d9ffb3"><xsl:value-of select="keywords/place/placekey"/></td>
+      <td bgcolor="#d9ffb3"></td>
+      <td bgcolor="#d9ffb3"><xsl:text>Biota</xsl:text></td>
+    </tr>
+     </table>
+     </td>
+    </tr>
+    <!--Place-->
+    <tr>
+    <th width="15%" bgcolor="#daa520"><strong>Place</strong></th>
+     <td class="tcenter">
+      <table>
+       <tr>
+       <th width="15%" bgcolor="#daa520"><strong>Placekt</strong></th>
+      <th bgcolor="#d9ffb3"><xsl:text>Geographic Names Information System</xsl:text></th>
+      </tr>
+     <tr>
+      <th width="15%" bgcolor="#daa520"><strong>Placekey</strong></th>
+      <td bgcolor="#d9ffb3"><xsl:text>Bering Sea</xsl:text></td>
     </tr>
      <tr>
-      <th width="15%" bgcolor="#daa520"><strong>Stratum</strong></th>
+      <th width="15%" bgcolor="#daa520"><strong>Placekey</strong></th>
+      <td bgcolor="#d9ffb3"><xsl:text>Chukchi Sea</xsl:text></td>
+    </tr>
+     <tr>
+      <th width="15%" bgcolor="#daa520"><strong>Placekey</strong></th>
+      <td bgcolor="#d9ffb3"><xsl:text>Beaufort Sea</xsl:text></td>
+    </tr>
+     <tr>
+      <th width="15%" bgcolor="#daa520"><strong>Placekey</strong></th>
+      <td bgcolor="#d9ffb3"><xsl:text>East Siberian Sea</xsl:text></td>
+    </tr>
+     <tr>
+      <th width="15%" bgcolor="#daa520"><strong>Placekey</strong></th>
+      <td bgcolor="#d9ffb3"><xsl:text>Russian Far East</xsl:text></td>
+    </tr>
+     <tr>
+      <th width="15%" bgcolor="#daa520"><strong>Placekey</strong></th>
+      <td bgcolor="#d9ffb3"><xsl:text>Chukotka</xsl:text></td>
+    </tr>
+     <tr>
+      <th width="15%" bgcolor="#daa520"><strong>Placekey</strong></th>
+      <td bgcolor="#d9ffb3"><xsl:text>Kamchatka</xsl:text></td>
+    </tr>
+     <tr>
+      <th width="15%" bgcolor="#daa520"><strong>Placekey</strong></th>
+      <td bgcolor="#d9ffb3"><xsl:text>Alaska</xsl:text></td>
+    </tr>
+     <tr>
+      <th width="15%" bgcolor="#daa520"><strong>Placekey</strong></th>
+      <td bgcolor="#d9ffb3"><xsl:text>Arctic Ocean</xsl:text></td>
+    </tr>
+     <tr>
+      <th width="15%" bgcolor="#daa520"><strong>Placekey</strong></th>
+      <td bgcolor="#d9ffb3"><xsl:text>Pacific Ocean</xsl:text></td>
+    </tr>
+     </table>
+     </td>
+    </tr>
+    <!--Stratum-->
+     <tr>
+      <th width="15%" bgcolor="#daa520"><strong>Stratkt</strong></th>
       <td bgcolor="#d9ffb3"><xsl:value-of select="keywords/stratum/stratkt"/></td>
     </tr>
      <tr>
-      <th width="15%" bgcolor="#daa520"><strong>Stratum</strong></th>
+      <th width="15%" bgcolor="#daa520"><strong>Stratkey</strong></th>
       <td bgcolor="#d9ffb3"><xsl:value-of select="keywords/stratum/stratkey"/></td>
     </tr>
      <tr>
-      <th width="15%" bgcolor="#daa520"><strong>Taxonomy</strong></th>
-      <td bgcolor="#d9ffb3"><xsl:value-of select="taxonomy/keywtax/taxonkt"/></td>
+      <th width="15%" bgcolor="#daa520"><strong>Stratkey</strong></th>
+      <td bgcolor="#d9ffb3"><xsl:text>shore</xsl:text></td>
+    </tr>
+    <!--Taxonomy-->
+    <tr>
+    <th width="15%" bgcolor="#daa520"><strong>Keywtax</strong></th>
+     <td class="tcenter">
+      <table>
+       <tr>
+       <th width="15%" bgcolor="#daa520"><strong>Taxonkt</strong></th>
+       <th bgcolor="#d9ffb3"><xsl:value-of select="taxonomy/keywtax/taxonkt"/></th>
+      </tr>
+     <tr>
+      <th width="15%" bgcolor="#daa520"><strong>Taxonkey</strong></th>
+      <td bgcolor="#d9ffb3"><xsl:value-of select="taxonomy/keywtax/taxonkey"/></td>
+    </tr> <tr>
+      <th width="15%" bgcolor="#daa520"><strong>Taxonkey</strong></th>
+      <td bgcolor="#d9ffb3"><xsl:text>Pacific Walruses</xsl:text></td>
     </tr>
      <tr>
-      <th width="15%" bgcolor="#daa520"><strong>Taxonomy</strong></th>
-      <td bgcolor="#d9ffb3"><xsl:value-of select="taxonomy/keywtax/taxonkey"/></td>
+      <th width="15%" bgcolor="#daa520"><strong>Taxonkey</strong></th>
+      <td bgcolor="#d9ffb3"><xsl:text>Odobenus rosmarus divergens</xsl:text></td>
     </tr>
+     <tr>
+      <th width="15%" bgcolor="#daa520"><strong>Taxonkey</strong></th>
+      <td bgcolor="#d9ffb3"><xsl:text>marine mammals</xsl:text></td>
+    </tr>
+     <tr>
+      <th width="15%" bgcolor="#daa520"><strong>Taxonkey</strong></th>
+      <td bgcolor="#d9ffb3"><xsl:text>animals</xsl:text></td>
+    </tr>
+     <tr>
+      <th width="15%" bgcolor="#daa520"><strong>Taxonkey</strong></th>
+      <td bgcolor="#d9ffb3"><xsl:text>mammals</xsl:text></td>
+    </tr>
+     <tr>
+      <th width="15%" bgcolor="#daa520"><strong>Taxonkey</strong></th>
+      <td bgcolor="#d9ffb3"><xsl:text>vertebrates</xsl:text></td>
+    </tr>
+     </table>
+     </td>
+    </tr>
+    <!--Taxonomy System-->
      <tr>
       <th width="15%" bgcolor="#daa520"><strong>Taxonomy System</strong></th>
       <td bgcolor="#d9ffb3"><xsl:value-of select="taxonomy/taxonsys/classsys/classcit/citeinfo/origin"/></td>
@@ -191,11 +304,11 @@
       <td bgcolor="#d9ffb3"><xsl:value-of select="taxonomy/taxonsys/classsys/classcit/citeinfo/geoform"/></td>
     </tr>
      <tr>
-      <th width="15%" bgcolor="#daa520"><strong>Series Information</strong></th>
+      <th width="15%" bgcolor="#daa520"><strong>Serinfo</strong></th>
       <td bgcolor="#d9ffb3"><xsl:value-of select="taxonomy/taxonsys/classsys/classcit/citeinfo/serinfo"/></td>
     </tr>
      <tr>
-      <th width="15%" bgcolor="#daa520"><strong>Series Name</strong></th>
+      <th width="15%" bgcolor="#daa520"><strong>Sername</strong></th>
       <td bgcolor="#d9ffb3"><xsl:value-of select="taxonomy/taxonsys/classsys/classcit/citeinfo/serinfo/sername"/></td>
     </tr>
      <tr>
@@ -203,7 +316,7 @@
       <td bgcolor="#d9ffb3"><xsl:value-of select="taxonomy/taxonsys/classsys/classcit/citeinfo/serinfo/issue"/></td>
     </tr>
      <tr>
-      <th width="15%" bgcolor="#daa520"><strong>Publish Place</strong></th>
+      <th width="15%" bgcolor="#daa520"><strong>Publishplace</strong></th>
       <td bgcolor="#d9ffb3"><xsl:value-of select="taxonomy/taxonsys/classsys/classcit/citeinfo/pubinfo/pubplace"/></td>
     </tr>
      <tr>
@@ -222,22 +335,75 @@
       <th width="15%" bgcolor="#daa520"><strong>Taxoncom</strong></th>
       <td bgcolor="#d9ffb3"><xsl:value-of select="taxonomy/taxonsys/taxoncom"/></td>
     </tr>
-     <tr>
-      <th width="15%" bgcolor="#daa520"><strong>Taxonnrn</strong></th>
-      <td bgcolor="#d9ffb3"><xsl:value-of select="taxonomy/taxoncl/taxonrn"/></td>
+    <!--Taxoncl-->
+    <tr>
+    <th width="15%" bgcolor="#daa520"><strong>Taxoncl</strong></th>
+     <td class="tcenter">
+      <table>
+       <tr>
+       <th bgcolor="#daa520"><strong>Taxonnrn</strong></th>
+       <th bgcolor="#daa520"><strong>Taxonnrv</strong></th>
+       <th bgcolor="#daa520"><strong>Common</strong></th>
+      </tr>
+      <tr>
+        <td bgcolor="#d9ffb3"><xsl:value-of select="taxonomy/taxoncl/taxonrn"/></td>
+        <td bgcolor="#d9ffb3"><xsl:value-of select="taxonomy/taxoncl/taxonrv"/></td>
+        <td bgcolor="#d9ffb3"><xsl:value-of select="taxonomy/taxoncl/common"/></td>
+      </tr>
+      <tr>
+        <td bgcolor="#d9ffb3"><xsl:text>Phylum</xsl:text></td>
+        <td bgcolor="#d9ffb3"><xsl:text>Chordata</xsl:text></td>
+        <td bgcolor="#d9ffb3"><xsl:text>chordates</xsl:text></td>
+      </tr>
+      <tr>
+        <td bgcolor="#d9ffb3"><xsl:text>Subphylum</xsl:text></td>
+        <td bgcolor="#d9ffb3"><xsl:text>Vertebrata</xsl:text></td>
+        <td bgcolor="#d9ffb3"><xsl:text> </xsl:text></td>
+      </tr>
+      <tr>
+        <td bgcolor="#d9ffb3"><xsl:text>Class</xsl:text></td>
+        <td bgcolor="#d9ffb3"><xsl:text>Mammalia</xsl:text></td>
+        <td bgcolor="#d9ffb3"><xsl:text> </xsl:text></td>
+      </tr>
+      <tr>
+        <td bgcolor="#d9ffb3"><xsl:text>Sublass</xsl:text></td>
+        <td bgcolor="#d9ffb3"><xsl:text>Theria</xsl:text></td>
+        <td bgcolor="#d9ffb3"><xsl:text> </xsl:text></td>
+      </tr>
+      <tr>
+        <td bgcolor="#d9ffb3"><xsl:text>Infralass</xsl:text></td>
+        <td bgcolor="#d9ffb3"><xsl:text>Eutheria</xsl:text></td>
+        <td bgcolor="#d9ffb3"><xsl:text> </xsl:text></td>
+      </tr>
+      <tr>
+        <td bgcolor="#d9ffb3"><xsl:text>Order</xsl:text></td>
+        <td bgcolor="#d9ffb3"><xsl:text>Carnivora</xsl:text></td>
+        <td bgcolor="#d9ffb3"><xsl:text> </xsl:text></td>
+      </tr>
+      <tr>
+        <td bgcolor="#d9ffb3"><xsl:text>Suborder</xsl:text></td>
+        <td bgcolor="#d9ffb3"><xsl:text>Caniformia</xsl:text></td>
+        <td bgcolor="#d9ffb3"><xsl:text> </xsl:text></td>
+      </tr>
+      <tr>
+        <td bgcolor="#d9ffb3"><xsl:text>Family</xsl:text></td>
+        <td bgcolor="#d9ffb3"><xsl:text>Odobenidae</xsl:text></td>
+        <td bgcolor="#d9ffb3"><xsl:text> </xsl:text></td>
+      </tr>
+      <tr>
+        <td bgcolor="#d9ffb3"><xsl:text>Genus</xsl:text></td>
+        <td bgcolor="#d9ffb3"><xsl:text>Odobenus</xsl:text></td>
+        <td bgcolor="#d9ffb3"><xsl:text>Walruses</xsl:text></td>
+      </tr>
+      <tr>
+        <td bgcolor="#d9ffb3"><xsl:text>Species</xsl:text></td>
+        <td bgcolor="#d9ffb3"><xsl:text>Odobenus rosmarus divergensOdobenus</xsl:text></td>
+        <td bgcolor="#d9ffb3"><xsl:text>Pacific walrus</xsl:text></td>
+      </tr>
+     </table>
+     </td>
     </tr>
-     <tr>
-      <th width="15%" bgcolor="#daa520"><strong>Taxonnrv</strong></th>
-      <td bgcolor="#d9ffb3"><xsl:value-of select="taxonomy/taxoncl/taxonrv"/></td>
-    </tr>
-     <tr>
-      <th width="15%" bgcolor="#daa520"><strong>Common</strong></th>
-      <td bgcolor="#d9ffb3"><xsl:value-of select="taxonomy/taxoncl/common"/></td>
-    </tr>
-     <tr>
-      <th width="15%" bgcolor="#daa520"><strong>Taxonrn</strong></th>
-      <td bgcolor="#d9ffb3"><xsl:value-of select="taxonomy/taxoncl/taxonrn"/></td>
-    </tr>
+    <!--Taxoncom-->
      <tr>
       <th width="15%" bgcolor="#daa520"><strong>Accconst</strong></th>
       <td bgcolor="#d9ffb3"><xsl:value-of select="accconst"/></td>
