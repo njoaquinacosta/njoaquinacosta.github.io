@@ -3,10 +3,16 @@
 <title>N. Joaquín Acosta | Python Developer | Data Analyst</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<script src="assets/d3.v3.min.js" charset="utf-8"></script>
+<script src="assets/c3.min.js"></script>
+
+<link href="assets/c3.css" rel="stylesheet">
 <!--<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">-->
 <link rel="stylesheet" href="https://njoaquinacosta.github.io/assets/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 <style>
 body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif;}
 body, html {
@@ -35,8 +41,14 @@ body, html {
     min-height: 400px;
 }
 
-/* Third image (Contact) */
+/* Third image (Blog) */
 .bgimg-3 {
+    background-image: url("https://njoaquinacosta.github.io/assets/imgs/los-angeles.jpeg");
+    min-height: 400px;
+}
+
+/* Fourth image (Contact) */
+.bgimg-4 {
     background-image: url("https://njoaquinacosta.github.io/assets/imgs/Bergisch-Gladbach.png");
     min-height: 400px;
 }
@@ -62,6 +74,7 @@ body, html {
     <a href="#home" class="w3-bar-item w3-button">HOME</a>
     <a href="#about" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-user"></i> ABOUT</a>
     <a href="#portfolio" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-th"></i> PORTFOLIO</a>
+    <a href="#blog" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-file-text"></i> BLOG</a>
     <a href="#contact" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-envelope"></i> CONTACT</a>
     <a href="#" class="w3-bar-item w3-button w3-hide-small w3-right w3-hover-red">
       <i class="fa fa-search"></i>
@@ -71,6 +84,7 @@ body, html {
   <!-- Navbar on small screens -->
   <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium">
     <a href="#about" class="w3-bar-item w3-button" onclick="toggleFunction()">ABOUT</a>
+    <a href="#blog" class="w3-bar-item w3-button" onclick="toggleFunction()">BLOG</a>
     <a href="#portfolio" class="w3-bar-item w3-button" onclick="toggleFunction()">PORTFOLIO</a>
     <a href="#contact" class="w3-bar-item w3-button" onclick="toggleFunction()">CONTACT</a>
     <a href="#" class="w3-bar-item w3-button">SEARCH</a>
@@ -107,7 +121,7 @@ body, html {
   <div class="w3-light-grey">
     <div class="w3-container w3-padding-small w3-dark-grey w3-center" style="width:79%">79%</div>
   </div>
-  <p class="w3-wide"><i class="fa fa-keyboard-o"></i>Python</p>
+  <p class="w3-wide"><i class="fa fa-code"></i>Python</p>
   <div class="w3-light-grey">
     <div class="w3-container w3-padding-small w3-dark-grey w3-center" style="width:87%">87%</div>
   </div>
@@ -159,7 +173,7 @@ body, html {
     </div>
 
     <div class="w3-col m3">
-      <img src="https://njoaquinacosta.github.io/assets/imgs/p004.png" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Geocoding &amp; GeoMapping Chargers 2017 Regular Season Games (Geocoding, Reverse Geocoding &amp; GeoMapping: Python: Jupyter)">
+      <img src="https://njoaquinacosta.github.io/assets/imgs/p010.png" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Performance Metrics (Classification: Python, Jupyter)">
     </div>
 
     <div class="w3-col m3">
@@ -194,16 +208,17 @@ body, html {
     </div>
 
     <div class="w3-col m3">
+      <img src="https://njoaquinacosta.github.io/assets/imgs/p004.png" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Geocoding &amp; GeoMapping Chargers 2017 Regular Season Games (Geocoding, Reverse Geocoding &amp; GeoMapping: Python: Jupyter)">
+    </div>
+    
+    <div class="w3-col m3">
       <img src="https://njoaquinacosta.github.io/assets/imgs/p009.png" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="WordNet &amp; NLTK (NLP: Python, Jupyter, WordNet, NLTK)">
     </div>
-
-    <div class="w3-col m3">
-      <img src="https://njoaquinacosta.github.io/assets/imgs/p010.png" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Performance Metrics (Classification: Python, Jupyter)">
-    </div>
-
+    
     <div class="w3-col m3">
       <img src="https://njoaquinacosta.github.io/assets/imgs/p011.png" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Mollusc Nervous Impulse Rates (Two-sample T-test: Python, Jupyter)">
-    </div>
+    </div>    
+  </div>
     <button class="w3-button w3-padding-large w3-light-grey" style="margin-top:64px">LOAD MORE</button>
   </div>
 </div>
@@ -217,8 +232,45 @@ body, html {
   </div>
 </div>
 
-<!-- Third Parallax Image with Portfolio Text -->
+<!-- Third Parallax Image with Blog Text -->
 <div class="bgimg-3 w3-display-container w3-opacity-min">
+  <div class="w3-display-middle">
+     <span class="w3-xxlarge w3-text-white w3-wide">BLOG</span>
+  </div>
+</div>
+
+<!-- Container (Blog Section) -->
+<div class="w3-content w3-container w3-padding-64" id="blog">
+  <h3 class="w3-center">THOUGHTS &amp; STUFF</h3>
+  <h4 class="w3-center">Road Bridge Condition (2103)</h4>
+  <p>A simple bar chart using the C3.js data visualization library to plot the percent of all structurally deficienct and all functionally obsolete bridges across all US states in the year 2013. The same can be done in Python using the C3PyO wrapper for the aforementioned data visualization library. Demo only.</p>
+  <div id="chart">
+    <script>
+        var chart = c3.generate({
+        data: {
+                columns: [
+                    ['Percent of All Structurally Deficient Bridges', 8.7, 11.1, 3.0, 6.9, 11.1, 6.2, 9.8, 6.5, 8.3, 2.1, 5.7, 12.8, 9.6, 8.5, 10.3, 20.7, 10.1, 8.7, 14.0, 15.2, 6.3, 9.5, 11.8, 8.3, 13.3, 13.8, 7.3, 17.8, 1.9, 14.6, 9.5, 7.6, 11.9, 12.7, 16.4, 8.3, 18.4, 5.6, 23.0, 21.8, 11.3, 20.6, 5.8, 2.4, 3.9, 9.2, 8.6, 4.7, 13.2, 8.5, 14.3],
+                    ['Percent of All Functionally Obsolete Bridges', 13.7, 13.1, 9.1, 15.8, 16.8, 10.5, 25.1, 14.0, 63.1, 14.8, 12.0, 31.1, 10.7, 7.4, 11.7, 5.0, 7.6, 22.7, 15.0, 17.7, 20.5, 43.0, 15.6, 3.3, 8.0, 13.5, 9.9, 6.7, 11.7, 17.8, 26.0, 9.0, 26.9, 17.8, 5.4, 16.3, 7.0, 17.3, 19.2, 34.7, 9.4, 4.2, 13.2, 16.6, 10.8, 23.9, 17.5, 21.4, 22.0, 5.5, 9.0],
+                  //  ['States', 'AL','AK','AZ','AK','CA','CO','CT','DE','DC','FL','GA','HI','ID','IL','IN','IA','KS','KY','LA','ME','MD','MA','MI','MN','MS','MO','MT','NE','NV','NH','NJ','NM','NY','NC','ND','OH','OK','OR','PA','RI','SC','SD','TN','TX','UT','VT','VA','WA','WV','WI','WY']
+                ],
+                type: 'bar'
+            },
+            axis: {
+                x: {
+                    type: 'state',
+                    states: ['AL','AK','AZ','AK','CA','CO','CT','DE','DC','FL','GA','HI','ID','IL','IN','IA','KS','KY','LA','ME','MD','MA','MI','MN','MS','MO','MT','NE','NV','NH','NJ','NM','NY','NC','ND','OH','OK','OR','PA','RI','SC','SD','TN','TX','UT','VT','VA','WA','WV','WI','WY']
+                }
+            },
+            color: {
+                pattern: ['#1E90FF', '#C0C0C0']
+            }
+        });
+        </script>
+    </div>
+</div>
+
+<!-- Fourth Parallax Image with Contact Text -->
+<div class="bgimg-4 w3-display-container w3-opacity-min">
   <div class="w3-display-middle">
      <span class="w3-xxlarge w3-text-white w3-wide">CONTACT</span>
   </div>
@@ -227,7 +279,7 @@ body, html {
 <!-- Container (Contact Section) -->
 <div class="w3-content w3-container w3-padding-64" id="contact">
   <h3 class="w3-center">WHERE I WORK</h3>
-  <p class="w3-center"><em>I'd love your feedback.</em></p>
+  <p class="w3-center"><em>I'd love your feedback!</em></p>
 
   <div class="w3-row w3-padding-32 w3-section">
     <div class="w3-col m4 w3-container">
@@ -262,14 +314,13 @@ body, html {
 
 <!-- Footer -->
 <footer class="w3-center w3-black w3-padding-64 w3-opacity w3-hover-opacity-off">
-  <a href="#home" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>^ Top ^</a>
+  <a href="#home" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>Top</a>
   <div class="w3-xlarge w3-section">
     <a href="https://github.com/njoaquinacosta" target="_blank"><i class="fa fa-github w3-hover-opacity"></i></a>
     <a href="https://www.linkedin.com/in/n-joaqu%C3%ADn-acosta-37a842148/" target="_blank"><i class="fa fa-linkedin w3-hover-opacity"></i></a>
     <a href="https://instagram.com/n.joaquinacosta" target="_blank"><i class="fa fa-instagram w3-hover-opacity"></i></a>
     <a href="https://twitter.com/njoaquinacosta" target="_blank"><i class="fa fa-twitter w3-hover-opacity"></i></a>
     <a href="https://facebook.com"><i class="fa fa-facebook-official w3-hover-opacity"></i></a>
-  </div>
   </div>
   <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">w3.css</a></p>
 </footer>
@@ -321,7 +372,11 @@ function toggleFunction() {
     }
 }
 </script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBYrbp34OohAHsX1cub8ZeHlMEFajv15fY=myMap"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBYrbp34OohAHsX1cub8ZeHlMEFajv15fY&callback=myMap"></script>
+<!--
+To use this code on your website, get a free API key from Google.
+Read more at: https://www.w3schools.com/graphics/google_maps_basic.asp
+-->
 
 </body>
 </html>
